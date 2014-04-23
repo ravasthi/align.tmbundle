@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Alignment Patterns (CSS)</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>
@@ -15,8 +15,8 @@
 				<string>TM_SOURCE_ALIGNMENT_PATTERN</string>
 				<key>value</key>
 				<string>[
-      { 
-        "regexp" : ":", 
+      {
+        "regexp" : ":",
         "padding" : "after"
       }]</string>
 			</dict>

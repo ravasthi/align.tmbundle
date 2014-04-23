@@ -15,14 +15,14 @@
 				<string>TM_SOURCE_ALIGNMENT_PATTERN</string>
 				<key>value</key>
 				<string>[
-      { 
+      {
         "regexp" : "=&gt;", "minimum_spacing_before" : " ", "minimum_spacing_after" : " "
       },
       {
         "regexp" : "=(?!&gt;)", "minimum_spacing_before" : " ", "minimum_spacing_after" : " "
       },
-      { 
-        "regexp" : ":", 
+      {
+        "regexp" : ":",
         "padding" : "after"
       }]</string>
 			</dict>

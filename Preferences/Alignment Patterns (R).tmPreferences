@@ -15,26 +15,26 @@
 				<string>TM_SOURCE_ALIGNMENT_PATTERN</string>
 				<key>value</key>
 				<string>[
-      { 
+      {
         "comment" : "align on assignments",
         "regexp" : "=|&lt;-|-&gt;",
-        "minimum_spacing_before" : " ", 
+        "minimum_spacing_before" : " ",
         "minimum_spacing_after" : " ",
         "padding" : "before"
       },
-      { 
+      {
         "comment" : "align right-hand side formulae assignments",
         "regexp" : "~",
         "padding" : "before"
       },
-      { 
+      {
         "comment" : "align amy stacked asignments on a line",
         "regexp" : ";",
         "padding" : "before"
       },
       {
         "comment" : "align any comments",
-        "regexp" : "#", 
+        "regexp" : "#",
         "padding" : "before"
       }]</string>
 			</dict>

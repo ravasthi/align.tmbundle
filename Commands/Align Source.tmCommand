@@ -41,7 +41,7 @@ def add_minimum_spacing(text, regexp_hash)
     before, symbol, after = split(line, regexp_hash)
     txt = before
     if right_spacing(before).length &lt; regexp_hash[MINIMUM_SPACING_BEFORE].length
-      txt += regexp_hash[MINIMUM_SPACING_BEFORE] 
+      txt += regexp_hash[MINIMUM_SPACING_BEFORE]
     end
     txt += symbol
     if left_spacing(after).length &lt; regexp_hash[MINIMUM_SPACING_AFTER].length
@@ -226,7 +226,7 @@ end</string>
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>keyEquivalent</key>
-	<string>^@9</string>
+	<string>~@]</string>
 	<key>name</key>
 	<string>Align Source</string>
 	<key>outputCaret</key>
