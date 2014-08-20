@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby -W0
+	<string>#!/usr/bin/env rvm-auto-ruby -W0
 
 require 'yaml'
 
@@ -14,9 +14,9 @@ MINIMUM_SPACING_AFTER  = "minimum_spacing_after"
 PADDING                = "padding"
 REGEXP                 = "regexp"
 
-# Alignes the source
+# Aligns the source
 def align(text, regexp_hash, max_offset)
-  text.to_a.map do |line|
+  text.lines.map do |line|
     if is_all_whitespace(line)
       line
     elsif !regexp_hash[REGEXP].match(line).nil?
@@ -37,7 +37,7 @@ def align(text, regexp_hash, max_offset)
 end
 
 def add_minimum_spacing(text, regexp_hash)
-  text.to_a.map do |line|
+  text.lines.map do |line|
     before, symbol, after = split(line, regexp_hash)
     txt = before
     if right_spacing(before).length &lt; regexp_hash[MINIMUM_SPACING_BEFORE].length
@@ -81,7 +81,7 @@ end
 
 # Checks that the regexp matches every line
 def hasMatchForAll(text, regexp)
-  text.to_a.all?{ |line| line =~ regexp }
+  text.lines.all?{ |line| line =~ regexp }
 end
 
 def left_spacing(line)
@@ -94,7 +94,7 @@ end
 
 # squeeces all whitspace in the line (preserves the left spacing)
 def trim_all_whitespace(text)
-  text.to_a.map do |line|
+  text.lines.map do |line|
     left_spacing(line) + line.squeeze(" ").squeeze("	").lstrip #the 2. is a tab
   end.join
 end
@@ -117,7 +117,7 @@ end
 # lowest offset comes first. The ones that aren't matched or doesn't need alignment
 # are filtered out
 def prioritizeRegexps(text, regexps_hash)
-  no_blank_lines = text.to_a.select { |line| not is_all_whitespace(line) }.join
+  no_blank_lines = text.lines.select { |line| not is_all_whitespace(line) }.join
   regexps_hash.
     select  { |rh|    hasMatchForAll(no_blank_lines, rh['regexp']) }.
     collect { |rh|    minOffsetOfRegexp(no_blank_lines, rh) }.
@@ -134,7 +134,7 @@ end
 # returns an array of dictionaries with the keys 'block', 'from', 'to' that
 # expresses which lines the block spans.
 def find_blocks(text)
-  lines = text.to_a
+  lines = text.lines
 
   initial = {
     'prev'   =&gt; lines[0],
@@ -145,7 +145,7 @@ def find_blocks(text)
     }]
   }
 
-  text.to_a.reduce(initial) do |reduced, line|
+  text.lines.reduce(initial) do |reduced, line|
     blocks = reduced['blocks']
 
     if is_all_whitespace(line)

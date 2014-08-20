@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Alignment Patterns (Python)</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>settings</key>
+	<dict>
+		<key>shellVariables</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>TM_SOURCE_ALIGNMENT_PATTERN</string>
+				<key>value</key>
+				<string>[
+      {
+        "regexp" : ":",
+        "padding" : "after"
+      }]</string>
+			</dict>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>C9E2BFDF-B97D-44E9-8525-130CAF3FAFD8</string>
+</dict>
+</plist>

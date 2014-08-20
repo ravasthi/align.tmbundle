@@ -15,28 +15,28 @@
 				<string>TM_SOURCE_ALIGNMENT_PATTERN</string>
 				<key>value</key>
 				<string>[
-      { 
-        "regexp" : "(,)(?!$)", 
+      {
+        "regexp" : "(,)(?!$)",
         "padding" : ""
       },
-      { 
-        "regexp" : "\}", 
+      {
+        "regexp" : "\}",
         "padding" : ""
       },
-      { 
-        "regexp" : "&lt;-", 
+      {
+        "regexp" : "&lt;-",
         "padding" : ""
       },
-      { 
-        "regexp" : "[-+\/*|]*=", 
+      {
+        "regexp" : "[-+\/*|]*=",
         "padding" : "before"
       },
-      { 
-        "regexp" : ":", 
+      {
+        "regexp" : ":",
         "padding" : ""
       },
-      { 
-        "regexp" : "\/\/", 
+      {
+        "regexp" : "\/\/",
         "padding" : ""
       }]</string>
 			</dict>
